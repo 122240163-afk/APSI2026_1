@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Adiprima Raih Penghargaan Industri Hijau - PT Adiprima Suraprinta</title>
+  <meta name="description" content="Kementerian Perindustrian RI memberikan penghargaan Industri Hijau kepada PT Adiprima Suraprinta atas komitmennya dalam penerapan industri berkelanjutan.">
+  <link href="assets/img/adiprima/logo/logo_adp.png" rel="icon">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --green: #1a6b3c; --green-dark: #0d3d22; --green-pale: #f0f9f4;
+      --brown: #7c4f23;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; color: #444; margin: 0; padding: 0; background: #fff; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; color: var(--green-dark); }
+    a { color: var(--green); text-decoration: none; transition: .3s; }
+    a:hover { color: var(--green-dark); }
+
+    /* ---- NAVBAR ---- */
+    #header {
+      position: sticky; top: 0; z-index: 997;
+      background: #fff; border-bottom: 3px solid var(--green);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08); padding: 12px 0;
+    }
+    .brand-name { font-family:'Montserrat',sans-serif; font-size:1rem; font-weight:800; color:var(--green); }
+    .brand-sub { font-size:0.6rem; color:var(--brown); font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+
+    /* ---- HERO BERITA ---- */
+    .news-hero {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+      padding: 60px 0 48px; position: relative; overflow: hidden;
+    }
+    .news-hero::before {
+      content:''; position:absolute; inset:0;
+      background: repeating-linear-gradient(-45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 40px);
+    }
+    .news-hero .category-badge {
+      display: inline-block; background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4); color: #a8e6c1;
+      padding: 5px 16px; border-radius: 30px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 16px;
+    }
+    .news-hero h1 { color: #fff; font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; line-height: 1.25; margin-bottom: 16px; }
+    .news-hero .meta { color: #a8e6c1; font-size: 0.88rem; display: flex; gap: 20px; flex-wrap: wrap; }
+    .news-hero .meta span { display: flex; align-items: center; gap: 6px; }
+
+    /* ---- CONTENT ---- */
+    .news-content { max-width: 820px; margin: 0 auto; padding: 52px 20px 80px; }
+    .featured-img {
+      width: 100%; max-height: 420px; object-fit: cover;
+      border-radius: 10px; margin-bottom: 36px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    .news-content p { font-size: 1.02rem; line-height: 1.9; color: #555; margin-bottom: 22px; }
+    .news-content h2 { font-size: 1.4rem; font-weight: 800; color: var(--green-dark); margin: 36px 0 14px; }
+    .news-content h3 { font-size: 1.15rem; font-weight: 700; color: var(--green-dark); margin: 28px 0 12px; }
+    .news-content ul, .news-content ol { padding-left: 22px; margin-bottom: 22px; }
+    .news-content ul li, .news-content ol li { line-height: 1.8; margin-bottom: 8px; color: #555; font-size: 1.02rem; }
+    .news-content blockquote {
+      border-left: 4px solid var(--green); padding: 16px 24px;
+      background: var(--green-pale); border-radius: 0 8px 8px 0;
+      margin: 28px 0; font-style: italic; color: #444;
+    }
+    .news-content blockquote strong { color: var(--green-dark); }
+    .highlight-box {
+      background: var(--green-pale); border: 1px solid #c0e8d0;
+      border-radius: 8px; padding: 20px 24px; margin: 28px 0;
+    }
+    .highlight-box h4 { color: var(--green); font-weight: 800; margin-bottom: 10px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ---- SHARE & BACK ---- */
+    .article-footer {
+      border-top: 1px solid #e0e0e0; padding-top: 28px; margin-top: 48px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; gap: 16px;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green); color: #fff;
+      padding: 10px 22px; border-radius: 4px;
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.88rem;
+      transition: .3s;
+    }
+    .back-btn:hover { background: var(--green-dark); color: #fff; }
+    .share-btns { display: flex; gap: 10px; }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 16px; border-radius: 4px; font-size: 0.82rem; font-weight: 600;
+      transition: .3s; border: 1.5px solid #ddd; color: #555;
+    }
+    .share-btn:hover { border-color: var(--green); color: var(--green); }
+
+    /* ---- OTHER NEWS ---- */
+    .other-news { background: var(--green-pale); padding: 60px 0; }
+    .other-news h3 { font-weight: 800; color: var(--green-dark); margin-bottom: 28px; font-size: 1.3rem; }
+    .onews-card {
+      background: #fff; border-radius: 8px; overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07); transition: .3s; height: 100%;
+    }
+    .onews-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(26,107,60,0.13); }
+    .onews-card img { width: 100%; height: 180px; object-fit: cover; }
+    .onews-body { padding: 18px; }
+    .onews-body .odate { font-size: 0.72rem; color: var(--green); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; display: block; }
+    .onews-body h5 { font-size: 0.95rem; font-weight: 800; color: var(--green-dark); margin-bottom: 8px; line-height: 1.4; }
+    .onews-body a { color: var(--green); font-size: 0.83rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; }
+
+    /* ---- FOOTER ---- */
+    .page-footer { background: #071e10; color: #6ea882; padding: 28px 0; font-size: 0.85rem; text-align: center; }
+    .page-footer a { color: #a8e6c1; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container-xl">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="d-flex align-items-center gap-2" style="text-decoration:none;">
+          <img src="assets/img/adiprima/logo/logo_adp.png" alt="Logo" style="height:40px;width:auto;">
+          <div>
+            <div class="brand-name">PT Adiprima Suraprinta</div>
+            <div class="brand-sub">Industri Kertas &amp; Pengolahan Kayu</div>
+          </div>
+        </a>
+        <a href="index.html#news" class="back-btn" style="font-size:0.82rem;">
+          <i class="bi bi-arrow-left"></i> Kembali ke Berita
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="news-hero">
+    <div class="container-xl" style="position:relative;z-index:2;">
+      <span class="category-badge"><i class="bi bi-award me-1"></i> Penghargaan</span>
+      <h1>Adiprima Raih Penghargaan Industri Hijau<br>dari Kemenperin 2024</h1>
+      <div class="meta">
+        <span><i class="bi bi-calendar3"></i> 15 Oktober 2026</span>
+        <span><i class="bi bi-person"></i> Tim Komunikasi Adiprima</span>
+        <span><i class="bi bi-clock"></i> 4 menit baca</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="news-content">
+
+    <img src="assets/img/adiprima/product/4.png" alt="Penghargaan Industri Hijau Adiprima" class="featured-img">
+
+    <p>
+      <strong>Gresik, 15 Oktober 2026</strong> — PT Adiprima Suraprinta kembali menorehkan prestasi membanggakan di tingkat nasional. Kementerian Perindustrian Republik Indonesia secara resmi memberikan <strong>Penghargaan Industri Hijau</strong> kepada perusahaan kertas berbasis daur ulang ini dalam acara Penganugerahan Penghargaan Industri Hijau 2024 yang diselenggarakan di Jakarta.
+    </p>
+
+    <p>
+      Penghargaan ini diberikan atas komitmen dan konsistensi PT Adiprima Suraprinta dalam menerapkan prinsip-prinsip industri berkelanjutan, mulai dari penggunaan bahan baku 100% daur ulang, efisiensi konsumsi energi, pengelolaan limbah terpadu, hingga program tanggung jawab sosial yang berdampak positif bagi masyarakat sekitar pabrik di Gresik, Jawa Timur.
+    </p>
+
+    <blockquote>
+      "Penghargaan ini bukan sekadar apresiasi, melainkan motivasi bagi kami untuk terus berinovasi dan meningkatkan standar keberlanjutan produksi kertas di Indonesia. Kami membuktikan bahwa industri yang ramah lingkungan dan profitabel bisa berjalan beriringan."
+      <br><br>
+      <strong>— Ir. Azriel Hanief Winata, S.T., M.T., IPM., Direktur Utama PT Adiprima Suraprinta</strong>
+    </blockquote>
+
+    <h2>Kriteria Penilaian Industri Hijau</h2>
+
+    <p>
+      Program Industri Hijau merupakan inisiatif Kementerian Perindustrian untuk mendorong sektor industri nasional beralih ke praktik produksi yang lebih efisien dan ramah lingkungan. Penilaian dilakukan secara komprehensif meliputi lima aspek utama:
+    </p>
+
+    <ul>
+      <li><strong>Efisiensi Penggunaan Bahan Baku</strong> — Pengurangan waste material dan optimasi bahan baku proses produksi</li>
+      <li><strong>Efisiensi Energi</strong> — Konsumsi energi per unit produksi yang terus ditekan melalui teknologi mesin Eropa terbaru</li>
+      <li><strong>Pengelolaan Air</strong> — Sistem pengolahan dan recirculation air limbah yang memenuhi baku mutu lingkungan</li>
+      <li><strong>Pengelolaan Limbah B3</strong> — Prosedur penanganan dan minimisasi limbah berbahaya sesuai regulasi</li>
+      <li><strong>Manajemen Sosial &amp; Lingkungan</strong> — Program CSR dan sistem manajemen lingkungan bersertifikasi ISO 14001</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h4><i class="bi bi-star-fill me-2"></i>Fakta Keberlanjutan Adiprima 2024</h4>
+      <ul style="margin:0; padding-left:18px;">
+        <li>100% bahan baku dari kertas bekas daur ulang</li>
+        <li>Penurunan konsumsi air proses sebesar 15% dibanding tahun sebelumnya</li>
+        <li>Zero landfill waste — seluruh sisa produksi dimanfaatkan kembali</li>
+        <li>Bersertifikasi ISO 14001:2015 dan ISO 9001:2015</li>
+        <li>Program penanaman 10.000 pohon di kawasan Gresik</li>
+      </ul>
+    </div>
+
+    <h2>Inovasi yang Mendukung Pencapaian Ini</h2>
+
+    <p>
+      Selama beberapa tahun terakhir, PT Adiprima Suraprinta telah melakukan serangkaian inovasi signifikan dalam proses produksinya. Peningkatan efisiensi mesin Paper Machine 1 (PM-1) dan Paper Machine 2 (PM-2) berhasil menurunkan konsumsi energi spesifik sebesar 12% dalam dua tahun terakhir.
+    </p>
+
+    <p>
+      Sistem pengolahan air limbah yang diperbarui juga memungkinkan perusahaan untuk mendaur ulang hingga 85% air proses produksi, secara signifikan mengurangi kebutuhan air baku dari sumber eksternal. Program ini sejalan dengan komitmen pemerintah dalam Sustainable Development Goals (SDGs) poin ke-6 tentang air bersih dan sanitasi, serta poin ke-12 tentang konsumsi dan produksi yang bertanggung jawab.
+    </p>
+
+    <h3>Program Ke Depan</h3>
+
+    <p>
+      Menatap tahun 2025 dan seterusnya, PT Adiprima Suraprinta berkomitmen untuk terus meningkatkan standar keberlanjutannya. Beberapa program yang tengah dipersiapkan antara lain implementasi sistem pemantauan emisi real-time, ekspansi program CSR ke bidang pendidikan vokasi, dan kajian feasibility untuk instalasi panel surya guna mendukung bauran energi terbarukan dalam operasional pabrik.
+    </p>
+
+    <p>
+      "Kami melihat keberlanjutan bukan sebagai beban, melainkan sebagai keunggulan kompetitif jangka panjang. Penghargaan ini memperkuat posisi kami sebagai pemimpin industri kertas hijau di Indonesia," tutup Direktur Utama dalam keterangannya.
+    </p>
+
+    <!-- ARTICLE FOOTER -->
+    <div class="article-footer">
+      <a href="index.html#news" class="back-btn">
+        <i class="bi bi-arrow-left"></i> Kembali ke Berita
+      </a>
+      <div class="share-btns">
+        <span style="font-size:0.85rem;color:#888;margin-right:4px;align-self:center;">Bagikan:</span>
+        <a href="#" class="share-btn"><i class="bi bi-facebook"></i> Facebook</a>
+        <a href="#" class="share-btn"><i class="bi bi-twitter-x"></i> Twitter</a>
+        <a href="#" class="share-btn"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BERITA LAINNYA -->
+  <div class="other-news">
+    <div class="container-xl">
+      <h3><i class="bi bi-newspaper me-2" style="color:var(--green);"></i>Berita Lainnya</h3>
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="onews-card">
+            <img src="assets/img/adiprima/product/5.png" alt="Berita 2">
+            <div class="onews-body">
+              <span class="odate"><i class="bi bi-calendar3 me-1"></i> 2 September 2026</span>
+              <h5>Peningkatan Kapasitas PM-2: Adiprima Perkuat Lini Kertas Tulis &amp; Cetak</h5>
+              <a href="berita-2.html">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="onews-card">
+            <img src="assets/img/adiprima/product/6.png" alt="Berita 3">
+            <div class="onews-body">
+              <span class="odate"><i class="bi bi-calendar3 me-1"></i> 10 Agustus 2026</span>
+              <h5>Program CSR: Tanam 10.000 Pohon di Gresik untuk Jaga Lingkungan</h5>
+              <a href="berita-3.html">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-center">
+          <div style="text-align:center;width:100%;padding:20px;">
+            <p style="color:#555;margin-bottom:16px;">Lihat semua berita dan update terbaru dari PT Adiprima Suraprinta.</p>
+            <a href="index.html#news" class="back-btn" style="justify-content:center;">
+              <i class="bi bi-grid-3x3-gap"></i> Semua Berita
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <div class="container-xl">
+      <p style="margin:0;">© 2026 <strong style="color:#a8e6c1;">PT Adiprima Suraprinta</strong>. All Rights Reserved. &nbsp;|&nbsp; <a href="index.html">Kembali ke Beranda</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script>AOS.init({ once: true });</script>
+</body>
+</html>

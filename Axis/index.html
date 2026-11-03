@@ -571,6 +571,21 @@
     }
     .news-more:hover { color: var(--green-dark); }
 
+    /* News card seluruh area bisa diklik */
+    #news a[href] > .news-card {
+      transition: transform .3s, box-shadow .3s;
+    }
+    #news a[href]:hover > .news-card {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(26,107,60,0.15);
+    }
+    #news a[href]:hover .news-more {
+      color: var(--green-dark);
+      gap: 8px;
+    }
+    #news a[href]:hover h4 { color: var(--green); }
+    #news a[href] h4 { transition: color .3s; }
+
     /* ============================================================
        WHY US
     ============================================================ */
@@ -1192,37 +1207,43 @@
         </div>
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="news-card">
+            <a href="berita-1.html" style="text-decoration:none;display:block;height:100%;">
+            <div class="news-card" style="cursor:pointer;">
               <div class="news-img"><img src="assets/img/adiprima/product/4.png" alt="Berita 1"></div>
               <div class="news-body">
                 <span class="news-date"><i class="bi bi-calendar3 me-1"></i> 15 Oktober 2026</span>
                 <h4>Adiprima Raih Penghargaan Industri Hijau dari Kemenperin 2024</h4>
                 <p>Kementerian Perindustrian RI memberikan penghargaan Industri Hijau kepada PT Adiprima Suraprinta atas komitmennya dalam penerapan industri berkelanjutan...</p>
-                <a href="#" class="news-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                <span class="news-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></span>
               </div>
             </div>
+            </a>
           </div>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="news-card">
+            <a href="berita-2.html" style="text-decoration:none;display:block;height:100%;">
+            <div class="news-card" style="cursor:pointer;">
               <div class="news-img"><img src="assets/img/adiprima/product/5.png" alt="Berita 2"></div>
               <div class="news-body">
                 <span class="news-date"><i class="bi bi-calendar3 me-1"></i> 2 September 2026</span>
                 <h4>Peningkatan Kapasitas PM-2: Adiprima Perkuat Lini Kertas Tulis &amp; Cetak</h4>
                 <p>PT Adiprima Suraprinta berhasil meningkatkan kapasitas Paper Machine 2 (PM-2) untuk memenuhi permintaan pasar yang terus tumbuh...</p>
-                <a href="#" class="news-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                <span class="news-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></span>
               </div>
             </div>
+            </a>
           </div>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="news-card">
+            <a href="berita-3.html" style="text-decoration:none;display:block;height:100%;">
+            <div class="news-card" style="cursor:pointer;">
               <div class="news-img"><img src="assets/img/adiprima/product/6.png" alt="Berita 3"></div>
               <div class="news-body">
                 <span class="news-date"><i class="bi bi-calendar3 me-1"></i> 10 Agustus 2026</span>
                 <h4>Program CSR: Tanam 10.000 Pohon di Gresik untuk Jaga Lingkungan</h4>
                 <p>Sebagai bagian dari tanggung jawab sosial perusahaan, PT Adiprima Suraprinta mengadakan program penanaman 10.000 pohon di sekitar kawasan pabrik Gresik...</p>
-                <a href="#" class="news-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                <span class="news-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></span>
               </div>
             </div>
+            </a>
           </div>
         </div>
         <div class="text-center mt-5" data-aos="fade-up">
