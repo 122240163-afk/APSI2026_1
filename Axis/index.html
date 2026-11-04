@@ -421,7 +421,29 @@
       font-size: clamp(1.6rem, 2.5vw, 2.1rem);
       font-weight: 800; color: var(--green-dark); margin-bottom: 16px;
     }
-    #about .about-text p { line-height: 1.85; margin-bottom: 14px; color: #555; }
+    #about .about-text p { line-height: 1.85; margin-bottom: 14px; color: #555; text-align: justify; }
+    
+    /* ============================================================
+       GLOBAL TEXT JUSTIFY — semua teks penjelasan/paragraf
+    ============================================================ */
+    .sec-head p,
+    .hero-desc,
+    #about .about-text p,
+    .prod-card-body p,
+    #sustainability .sus-desc,
+    .sus-item p,
+    .cert-card p,
+    .news-card p,
+    .why-card p,
+    .team-card p,
+    .ci-item p,
+    .ft-desc,
+    .anti-fraud,
+    .about-stat .lbl,
+    .prod-card-body ul li,
+    .form-box p {
+      text-align: justify;
+    }
     .about-stats { display: flex; gap: 18px; margin: 28px 0; flex-wrap: wrap; }
     .about-stat {
       flex: 1; min-width: 130px;
