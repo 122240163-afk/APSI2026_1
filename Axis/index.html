@@ -894,7 +894,7 @@
             <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
               <div class="hero-panel">
                 <div class="hero-panel-img">
-                  <img src="assets/img/adiprima/about/1.jpg" alt="Pekerja PT Adiprima Suraprinta" style="object-position: center top;">
+                  <img src="assets/img/adiprima/hero/pabrik-drone.png" alt="Pabrik PT Adiprima Suraprinta dari udara" style="object-position: center center;">
                 </div>
                 <div class="hero-info-cards">
                   <div class="hero-info-card">
@@ -1565,38 +1565,38 @@
           <div class="col-lg-7">
             <div class="form-box">
               <h3>Kirim Pesan</h3>
-              <form action="forms/contact.php" method="post" class="php-email-form">
+              <form id="contactForm" onsubmit="kirimPesan(event)">
                 <div class="row g-3">
                   <div class="col-md-6">
                     <label class="form-label">Nama Lengkap <span style="color:red;">*</span></label>
-                    <input type="text" name="name" class="form-control" placeholder="Masukkan nama Anda" required>
+                    <input type="text" id="nama" class="form-control" placeholder="Masukkan nama Anda" required>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label">Alamat Email <span style="color:red;">*</span></label>
-                    <input type="email" name="email" class="form-control" placeholder="email@perusahaan.com" required>
+                    <input type="email" id="emailPengirim" class="form-control" placeholder="email@perusahaan.com" required>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label">Nomor Telepon</label>
-                    <input type="tel" name="phone" class="form-control" placeholder="+62 xxx xxxx xxxx">
+                    <input type="tel" id="telepon" class="form-control" placeholder="+62 xxx xxxx xxxx">
                   </div>
                   <div class="col-md-6">
                     <label class="form-label">Keperluan</label>
-                    <select name="subject" class="form-control">
+                    <select id="keperluan" class="form-control">
                       <option value="">-- Pilih Keperluan --</option>
-                      <option value="pembelian">Pembelian Produk</option>
-                      <option value="kerjasama">Kerjasama Bisnis</option>
-                      <option value="karir">Karir / Rekrutmen</option>
-                      <option value="lainnya">Lainnya</option>
+                      <option value="Pembelian Produk">Pembelian Produk</option>
+                      <option value="Kerjasama Bisnis">Kerjasama Bisnis</option>
+                      <option value="Karir / Rekrutmen">Karir / Rekrutmen</option>
+                      <option value="Lainnya">Lainnya</option>
                     </select>
                   </div>
                   <div class="col-12">
                     <label class="form-label">Pesan <span style="color:red;">*</span></label>
-                    <textarea name="message" class="form-control" rows="5" placeholder="Tuliskan pesan atau pertanyaan Anda..." required></textarea>
+                    <textarea id="pesan" class="form-control" rows="5" placeholder="Tuliskan pesan atau pertanyaan Anda..." required></textarea>
                   </div>
                   <div class="col-12">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Pesan Anda telah terkirim. Terima kasih!</div>
+                    <div id="formSuccess" style="display:none;background:#e8f5ee;color:#1a6b3c;padding:12px 16px;border-radius:6px;font-weight:600;margin-bottom:12px;">
+                      <i class="bi bi-check-circle-fill me-2"></i>Aplikasi email Anda akan terbuka. Klik "Kirim" di email untuk mengirim pesan!
+                    </div>
                     <button type="submit" class="btn-submit">
                       Kirim Pesan &nbsp;<i class="bi bi-send"></i>
                     </button>
@@ -1813,23 +1813,51 @@
       });
     }
 
-    // ===== PHP Email Form (fallback) =====
-    var forms = document.querySelectorAll('.php-email-form');
-    forms.forEach(function(form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var loading = form.querySelector('.loading');
-        var error = form.querySelector('.error-message');
-        var success = form.querySelector('.sent-message');
-        loading.style.display = 'block';
-        error.style.display = 'none';
-        success.style.display = 'none';
-        setTimeout(function() {
-          loading.style.display = 'none';
-          success.style.display = 'block';
-        }, 1800);
-      });
-    });
+    // ===== FORM KIRIM PESAN via mailto =====
+    function kirimPesan(e) {
+      e.preventDefault();
+
+      var nama        = document.getElementById('nama').value.trim();
+      var email       = document.getElementById('emailPengirim').value.trim();
+      var telepon     = document.getElementById('telepon').value.trim();
+      var keperluan   = document.getElementById('keperluan').value;
+      var pesan       = document.getElementById('pesan').value.trim();
+
+      // Susun subject email
+      var subject = keperluan
+        ? '[Adiprima Website] ' + keperluan + ' - ' + nama
+        : '[Adiprima Website] Pesan dari ' + nama;
+
+      // Susun isi email
+      var body =
+        'Nama Lengkap : ' + nama + '\n' +
+        'Email        : ' + email + '\n' +
+        'No. Telepon  : ' + (telepon || '-') + '\n' +
+        'Keperluan    : ' + (keperluan || '-') + '\n' +
+        '\n' +
+        'Pesan:\n' +
+        pesan + '\n' +
+        '\n' +
+        '--\n' +
+        'Pesan ini dikirim melalui form kontak website PT Adiprima Suraprinta.';
+
+      // Buka mailto
+      var mailtoLink =
+        'mailto:122240163@student.upnyk.ac.id' +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body='    + encodeURIComponent(body);
+
+      window.location.href = mailtoLink;
+
+      // Tampilkan pesan sukses
+      document.getElementById('formSuccess').style.display = 'block';
+      document.getElementById('contactForm').reset();
+
+      // Sembunyikan pesan sukses setelah 6 detik
+      setTimeout(function() {
+        document.getElementById('formSuccess').style.display = 'none';
+      }, 6000);
+    }
   </script>
 
 </body>
